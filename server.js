@@ -23,7 +23,7 @@ mongoose.connect('mongodb://localhost:27017/eventapp', { useNewUrlParser: true }
 var db = mongoose.connection;
 
 db.on('open', function() {
-    console.log('App is connected to database');
+    console.log('App is connected to database..');
 });
 
 db.on('error', function(err) {
