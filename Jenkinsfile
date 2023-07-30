@@ -15,9 +15,11 @@ pipeline {
             }
         stage('Building our image') {
             steps {
-                dockerImage = docker.build regitry + ":$BUILD_NUMBER" 
+                script{
+                    dockerImage = docker.build regitry + ":$BUILD_NUMBER" 
                 }
             }
+        }
         
         stage('Deploy our image') {
             steps {
