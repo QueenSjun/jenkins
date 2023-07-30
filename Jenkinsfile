@@ -8,14 +8,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Building our image') {
+        stage('clone out from git') {
             steps {
                 git credentialsId: '30bebbe1-4835-499d-836f-b970525deac8', url: 'https://github.com/QueenSjun/jenkins.git'
                 }
             }
         stage('Building our image') {
             steps {
-                git credentialsId: '30bebbe1-4835-499d-836f-b970525deac8', url: 'https://github.com/QueenSjun/jenkins.git'
+                dockerImage = docker.build regitry + ":$BUILD_NUMBER" 
                 }
             }
         
